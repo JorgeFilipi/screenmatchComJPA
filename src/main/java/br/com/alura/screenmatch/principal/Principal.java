@@ -315,26 +315,26 @@ public class Principal {
         }
     }
 
-        @Transactional
+    @Transactional
     private void excluirSerie() {
         listarSeriesBuscadas();
 
-            System.out.println("Digite o nome da série para excluir:");
-            String nomeSerie = leitura.nextLine();
+        System.out.println("Digite o nome da série para excluir:");
+        String nomeSerie = leitura.nextLine();
 
-            Optional<Serie> serieBuscada = repository.findByTituloContainingIgnoreCase(nomeSerie);
+        Optional<Serie> serieBuscada = repository.findByTituloContainingIgnoreCase(nomeSerie);
 
-            if (serieBuscada.isPresent()) {
-                Serie serie = serieBuscada.get();
+        if (serieBuscada.isPresent()) {
+            Serie serie = serieBuscada.get();
 
-                repository.deletarEpisodiosPorSerie(serie.getId());
-                repository.deletarEpisodiosPorSerie(serie.getId());
-                repository.deletarSerie(serie.getId());
+            repository.deletarEpisodiosPorSerie(serie.getId());
+            repository.deletarEpisodiosPorSerie(serie.getId());
+            repository.deletarSerie(serie.getId());
 
-                System.out.println("Série '" + serie.getTitulo() + "' e todas as temporadas/episódios associados foram excluídos!");
-            } else {
-                System.out.println("Série não encontrada.");
-            }
+            System.out.println("Série '" + serie.getTitulo() + "' e todas as temporadas/episódios associados foram excluídos!");
+        } else {
+            System.out.println("Série não encontrada.");
+        }
 
 
     }

@@ -1,10 +1,5 @@
 package br.com.alura.screenmatch;
 
-import br.com.alura.screenmatch.principal.Principal;
-import br.com.alura.screenmatch.repository.SerieRepository;
-import io.github.cdimascio.dotenv.Dotenv;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
